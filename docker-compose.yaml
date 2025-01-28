@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: stbtest
+      POSTGRES_PASSWORD: stbtest
+      POSTGRES_DB: db_stbtest
+    ports:
+      - '5432:5432'
+
+  pgweb:
+    image: sosedoff/pgweb
+    container_name: app_pgweb_stbtest
+    restart: unless-stopped
+    ports:
+      - 8081:8081
+    links:
+      - postgres:postgres
+    environment:
+      - DATABASE_URL=postgres://stbtest:stbtest@postgres:5432/db_stbtest?sslmode=disable

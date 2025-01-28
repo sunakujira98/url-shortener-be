@@ -1,0 +1,9 @@
+model urlShortener {
+  id Int @id @default(autoincrement())
+  short_url String @unique
+  long_url String
+  createdAt DateTime @default(now())
+  visit    Int      @default(0)
+
+  @@map("url_shortener")
+}
