@@ -14,16 +14,6 @@ export const getURLShortener = async (req: Request, res: Response) => {
   }
 }
 
-export const getURLShortenerRedirect = async (req: Request, res: Response) => {
-  try {
-    const result = await URLShortenerService.getByShortURL(req.params.shortUrl)
-
-    res.redirect(result.long_url)
-  } catch (error: unknown) {
-    handleRequestError(res, error)
-  }
-}
-
 export const createURLShortener = async (req: Request, res: Response) => {
   try {
     const result = await URLShortenerService.create(req.body.url, 10)
