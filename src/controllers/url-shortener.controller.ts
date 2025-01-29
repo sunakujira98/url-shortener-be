@@ -8,7 +8,7 @@ export const getURLShortener = async (req: Request, res: Response) => {
   try {
     const result = await URLShortenerService.getByShortURL(req.params.shortUrl)
 
-    res.status(HttpStatusCode.Ok).send(result)
+    res.redirect(result.long_url)
   } catch (error: unknown) {
     handleRequestError(res, error)
   }
