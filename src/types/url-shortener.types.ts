@@ -6,7 +6,8 @@ export type TGenerateShortURL = {
 export type TURLMapping = Record<string, string>
 
 export type TShorterURLSecureResult = {
-  shortURL: string
+  short_url: string
+  long_url: string
 }
 
 export type TBaseURL = {

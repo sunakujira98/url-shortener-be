@@ -35,7 +35,8 @@ const generateShortURL = async (params: TGenerateShortURL) => {
       })
 
       return {
-        shortURL,
+        short_url: shortURL,
+        long_url: url,
       }
     }
     attempts++

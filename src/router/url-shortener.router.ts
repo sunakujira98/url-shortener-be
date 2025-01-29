@@ -6,6 +6,7 @@ import { validateData } from '../middleware/validateData'
 
 const router = express.Router()
 
+router.get('/redirect/:shortUrl', validateData({ params: RequiredShortURLSchema }), getURLShortener)
 router.get('/:shortUrl', validateData({ params: RequiredShortURLSchema }), getURLShortener)
 router.post('/', validateData({ body: CreateURLShortenerSchema }), createURLShortener)
 
