@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { HttpStatusCode } from 'axios'
 import { Request, Response, NextFunction } from 'express'
 import { z, ZodError } from 'zod'

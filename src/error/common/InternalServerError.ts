@@ -1,4 +1,5 @@
 import { HttpStatusCode } from 'axios'
+
 import AppError from '../AppError'
 
 export class InternalServerError extends AppError {

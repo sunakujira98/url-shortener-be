@@ -1,12 +1,12 @@
 import crypto from 'crypto'
 
-import * as URLShortenerRepository from '../repositories/url-shortener.repository'
-
-import { TGenerateShortURL, TShorterURLSecureResult, TURL } from '../types/url-shortener.types'
 import { URLShortenerNotFoundError } from '../error/application/url-shortener/URLShortenerNotFoundError'
 import { URLShortenerUnableToCreateError } from '../error/application/url-shortener/URLShortenerUnableToCreateError'
+import * as URLShortenerRepository from '../repositories/url-shortener.repository'
+import { TGenerateShortURL, TShorterURLSecureResult, TURL } from '../types/url-shortener.types'
 
 const generateSecureHash = async (url: string, length: number = 8): Promise<string> => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   return new Promise((resolve, reject) => {
     const hash = crypto.createHash('sha256')
     hash.update(Buffer.from(url))

@@ -1,8 +1,8 @@
 import { HttpStatusCode } from 'axios'
 import { Request, Response } from 'express'
 
-import * as URLShortenerService from '../services/url-shortener.service'
 import { handleRequestError } from '../middleware/handleRequestError'
+import * as URLShortenerService from '../services/url-shortener.service'
 
 export const getURLShortener = async (req: Request, res: Response) => {
   try {

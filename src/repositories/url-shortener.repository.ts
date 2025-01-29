@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+
 import { TBaseURL, TURL } from '../types/url-shortener.types'
 
 const prisma = new PrismaClient()
